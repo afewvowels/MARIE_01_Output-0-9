@@ -1,0 +1,31 @@
+     Assembly listing for: kbsmith01.mas
+                Assembled: Tue Mar 19 12:44:06 EDT 2019
+
+         |         ORG 100           
+100 110A |  Loop   LOAD Outval       
+101 6000 |         OUTPUT            
+102 310C |         ADD One           
+103 210A |         STORE Outval      
+104 110B |         LOAD Ctr          
+105 410C |         SUBT One          
+106 210B |         STORE Ctr         
+107 8400 |         SKIPCOND 400      
+108 9100 |         JUMP Loop         
+109 7000 |         HALT              
+10A 0031 |  Outval HEX 031           
+10B 0009 |  Ctr    DEC 9             
+10C 0001 |  One    DEC 1             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          Ctr    |   10B   | 104, 106
+          Loop   |   100   | 108
+          One    |   10C   | 102, 105
+          Outval |   10A   | 100, 103
+         --------------------------------------------------
+
+

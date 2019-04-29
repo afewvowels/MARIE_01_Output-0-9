@@ -1,0 +1,14 @@
+     org 100		# Keith Smith
+Loop,	Load	Outval	# Load the output value
+	Output		# Output the output value
+	Add One		# Add 1 to the output value
+	Store Outval	# Store the incremented output value
+	Load Ctr	# Now, load the counter
+	Subt One	# Increment the counter
+	Store Ctr	# Store the counter
+	Skipcond 400	# Check if counter == 0
+	Jump	Loop	# If skipcond not met, start at top of loop
+	Halt		# If skipcond, jump command is skipped and halt is called
+Outval,	Hex	031	# Hex representation of "0" in ASCII table
+Ctr,	Dec	9	# Counter variable
+One,	Dec	1	# "One"
